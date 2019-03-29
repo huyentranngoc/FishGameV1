@@ -34,7 +34,7 @@
         android:layout_below="@+id/gameOver"
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:padding="10dp"
         android:text="Play Again"
         android:textAllCaps="false"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/play_again_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:background="@color/colorAccent"
         android:padding="10dp"
         android:text="Main Menu"
@@ -74,4 +74,4 @@
         android:textColor="@color/colorAccent"/>
 
 
-</RelativeLayout> 
+</RelativeLayout>
