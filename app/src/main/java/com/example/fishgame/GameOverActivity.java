@@ -12,6 +12,7 @@ import org.w3c.dom.Text;
 public class GameOverActivity extends AppCompatActivity {
 
     private Button StartGameAgain;
+    private Button MainMenu;
     private TextView DisplayScore;
     private String score;
 
@@ -23,9 +24,14 @@ public class GameOverActivity extends AppCompatActivity {
 
         score = getIntent().getExtras().get("score").toString();
 
+        //Initialize textview
         DisplayScore = (TextView) findViewById(R.id.displayScore);
 
+        //intitialize the buttons
         StartGameAgain = (Button) findViewById(R.id.play_again_btn);
+        MainMenu = (Button) findViewById(R.id.main_menu_btn);
+
+        //on click listener for the startgameagain button
         StartGameAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +40,15 @@ public class GameOverActivity extends AppCompatActivity {
             }
         });
 
+        //On click listener for the Main Menu button to take user back to the main menu
+        MainMenu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent MainMenuIntent = new Intent(GameOverActivity.this, SplashActivity.class);
+                startActivity(MainMenuIntent);
+            }
+        });
 
-            DisplayScore.setText("Your Score is "+score);
+        DisplayScore.setText("Your Score is "+score);
     }
 }
