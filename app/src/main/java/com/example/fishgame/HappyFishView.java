@@ -37,13 +37,11 @@ public class HappyFishView extends View
 
     private Boolean touch = false;
 
-
     public void setNum(int Grn, int Ylw, int Red){
         greenSpeed = Grn;
         yellowSpeed = Ylw;
         redSpeed = Red;
     }
-
 
     public HappyFishView(Context context) {
         super(context);
@@ -100,7 +98,6 @@ public class HappyFishView extends View
         }
         fishSpeed = fishSpeed + 2;
 
-
         if(touch)
         {
             canvas.drawBitmap(fish[1], fishX, fishY, null);
@@ -118,7 +115,6 @@ public class HappyFishView extends View
         {
             score = score+10;
             yellowX =-100;
-
         }
         //randomly yellow balls
         if ( yellowX <0)
@@ -128,8 +124,6 @@ public class HappyFishView extends View
         }
         //draw a yellow balls
         canvas.drawCircle(yellowX,yellowY,25,yellowPaint);
-
-
 
         //green balls
         greenX = greenX - greenSpeed;
@@ -153,7 +147,6 @@ public class HappyFishView extends View
 
         if(hitBallChecker(redX,redY))
         {
-
             redX =-100;
             lifeCounterOfFish--; //decrease life of Fish by one if the fish hit one red ball
             if(lifeCounterOfFish ==0)
@@ -164,10 +157,9 @@ public class HappyFishView extends View
                 gameOverIntent.putExtra("score", score);
 
                 getContext().startActivity(gameOverIntent);
-
             }
-
         }
+
         //randomly red balls
         if ( redX <0)
         {
