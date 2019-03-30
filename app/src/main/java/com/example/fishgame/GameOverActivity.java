@@ -1,5 +1,8 @@
 package com.example.fishgame;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +12,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class GameOverActivity extends AppCompatActivity {
+public class GameOverActivity extends Activity {
 
     private Button StartGameAgain;
     private Button MainMenu;
@@ -50,5 +53,26 @@ public class GameOverActivity extends AppCompatActivity {
         });
 
         DisplayScore.setText("Your Score is "+score);
+    }
+
+    @Override
+    public void onBackPressed(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(GameOverActivity.this);
+        builder.setMessage("Are you sure you want to exit?");
+        builder.setCancelable(true);
+        builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
