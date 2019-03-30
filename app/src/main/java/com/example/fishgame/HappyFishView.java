@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 public class HappyFishView extends View
 {
@@ -19,14 +18,14 @@ public class HappyFishView extends View
     private  int fishY;
     private  int fishSpeed;
 
-    private int yellowX, yellowY, yellowSpeed = 16;
+    private int yellowX, yellowY, yellowSpeed;
     private Paint yellowPaint = new Paint();
 
-    private int greenX, greenY, greenSpeed = 20;
+    private int greenX, greenY, greenSpeed;     //Took off declaration for to bring the value over from the splash activity
     private Paint greenPaint = new Paint();
 
     //dangerous ball - will kill the fish - decrease the life of fish
-    private int redX, redY, redSpeed = 30;
+    private int redX, redY, redSpeed;
     private Paint redPaint = new Paint();
 
     private int score, lifeCounterOfFish;
@@ -37,6 +36,14 @@ public class HappyFishView extends View
     private Bitmap life[] = new Bitmap[2];
 
     private Boolean touch = false;
+
+
+    public void setNum(int Grn, int Ylw, int Red){
+        greenSpeed = Grn;
+        yellowSpeed = Ylw;
+        redSpeed = Red;
+    }
+
 
     public HappyFishView(Context context) {
         super(context);
@@ -54,8 +61,6 @@ public class HappyFishView extends View
 
         redPaint.setColor(Color.RED);
         redPaint.setAntiAlias(false);
-
-
 
         scorePaint.setColor(Color.WHITE);
         scorePaint.setTextSize(70);

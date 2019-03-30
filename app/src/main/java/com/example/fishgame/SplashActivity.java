@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 public class SplashActivity extends Activity implements View.OnClickListener {
 
+    //Initialize public static variables to hold speed values for the different balls
+    public static int StaticGrnSpd, StaticYlwSpd, StaticRedSpd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,23 +39,49 @@ public class SplashActivity extends Activity implements View.OnClickListener {
 
                 Toast.makeText(this, "easy button clicked", Toast.LENGTH_SHORT).show();
 
-                Intent intent1 = new Intent(this, MainActivity.class);
-                startActivity(intent1);
+                //Intent intent1 = new Intent(this, MainActivity.class);
+
+                StaticGrnSpd = 20;   //setting the speeds of the individual balls
+                StaticYlwSpd = 16;   //for the easy difficulty
+                StaticRedSpd = 30;
+
+                //startActivity(intent1); //start the intent (Main Activity)
+
+                break;
+
 
             case R.id.mediumButton:
 
                 Toast.makeText(this, "medium button clicked", Toast.LENGTH_SHORT).show();
 
-                Intent intent2 = new Intent(this, MainActivity.class);
-                startActivity(intent2);
+                //Intent intent2 = new Intent(this, MainActivity.class);
+
+                StaticGrnSpd = 35;  //setting the speeds of the individual balls
+                StaticYlwSpd = 30;  //for the medium difficulty
+                StaticRedSpd = 40;
+
+
+                //startActivity(intent2); //start the intent (Main Activity)
+
+                break;
 
             case R.id.hardButton:
 
                 Toast.makeText(this, "hard button clicked", Toast.LENGTH_SHORT).show();
+                //Intent intent3 = new Intent(this, MainActivity.class);
 
-                Intent intent3 = new Intent(this, MainActivity.class);
-                startActivity(intent3);
+                StaticGrnSpd = 40;  //setting the speeds of the individual balls
+                StaticYlwSpd = 35;  //for the medium difficulty
+                StaticRedSpd = 60;
+
+                //startActivity(intent3); //start the intent (Main Activity)
+
+                break;
         }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 
     @Override
