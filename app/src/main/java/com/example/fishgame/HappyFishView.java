@@ -34,9 +34,9 @@ public class HappyFishView extends View
     private Bitmap backgoundImage;
     private Paint scorePaint = new Paint();
     private Bitmap life[] = new Bitmap[2];
+    private Bitmap pauseButton;
 
     private Boolean touch = false;
-
     public void setNum(int Grn, int Ylw, int Red){
         greenSpeed = Grn;
         yellowSpeed = Ylw;
@@ -186,10 +186,6 @@ public class HappyFishView extends View
                 canvas.drawBitmap(life[1],x,y,null);
             }
         }
-
-
-
-
     }
 
     public Boolean hitBallChecker(int x, int y)
@@ -200,9 +196,6 @@ public class HappyFishView extends View
         }
         return false;
     }
-
-
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

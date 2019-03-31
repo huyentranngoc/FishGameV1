@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +31,9 @@ public class SplashActivity extends Activity implements View.OnClickListener {
         easyButton.setOnClickListener(this);
         mediumButton.setOnClickListener(this);
         hardButton.setOnClickListener(this);
+
+
+
     }
 
     //overriding the on click method and using a switch statement to get the ID of the button clicked.
@@ -38,6 +43,9 @@ public class SplashActivity extends Activity implements View.OnClickListener {
             case R.id.easyButton:
 
                 Toast.makeText(this, "easy button clicked", Toast.LENGTH_SHORT).show();
+
+
+
 
                 StaticGrnSpd = 20;   //setting the speeds of the individual balls
                 StaticYlwSpd = 16;   //for the easy difficulty
@@ -50,6 +58,7 @@ public class SplashActivity extends Activity implements View.OnClickListener {
 
                 Toast.makeText(this, "medium button clicked", Toast.LENGTH_SHORT).show();
 
+
                 StaticGrnSpd = 35;  //setting the speeds of the individual balls
                 StaticYlwSpd = 30;  //for the medium difficulty
                 StaticRedSpd = 40;
@@ -59,6 +68,7 @@ public class SplashActivity extends Activity implements View.OnClickListener {
             case R.id.hardButton:
 
                 Toast.makeText(this, "hard button clicked", Toast.LENGTH_SHORT).show();
+
 
                 StaticGrnSpd = 40;  //setting the speeds of the individual balls
                 StaticYlwSpd = 35;  //for the medium difficulty
